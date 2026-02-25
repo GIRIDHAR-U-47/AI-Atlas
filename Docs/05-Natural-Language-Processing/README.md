@@ -2,6 +2,8 @@
 
 Text processing, representations, and neural language models.
 
+
+
 ## Topics in this section
 
 - [TEXT FUNDAMENTALS](./01-Text-Fundamentals/README.md)
