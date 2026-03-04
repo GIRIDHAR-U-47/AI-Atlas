@@ -31,14 +31,6 @@
               "type": "file"
             },
             {
-              "name": "06-key-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
-            },
-            {
               "name": "zz-test-topic.md",
               "type": "file"
             }
@@ -79,14 +71,6 @@
             {
               "name": "08-learning-agent.md",
               "type": "file"
-            },
-            {
-              "name": "09-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -121,14 +105,6 @@
             {
               "name": "07-minimax-alpha-beta.md",
               "type": "file"
-            },
-            {
-              "name": "08-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -155,14 +131,6 @@
             {
               "name": "05-forward-backward-chaining.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -180,14 +148,6 @@
             },
             {
               "name": "03-utility-theory-decision-trees.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -211,20 +171,8 @@
             {
               "name": "04-hidden-markov-models.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -258,14 +206,6 @@
             },
             {
               "name": "06-optimization-basics.md",
-              "type": "file"
-            },
-            {
-              "name": "07-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -317,14 +257,6 @@
             {
               "name": "11-support-vector-machines.md",
               "type": "file"
-            },
-            {
-              "name": "12-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -367,14 +299,6 @@
             {
               "name": "09-fp-growth.md",
               "type": "file"
-            },
-            {
-              "name": "10-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -392,14 +316,6 @@
             },
             {
               "name": "03-co-training.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -443,14 +359,6 @@
             {
               "name": "09-model-based-rl.md",
               "type": "file"
-            },
-            {
-              "name": "10-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -489,20 +397,8 @@
             {
               "name": "08-bayesian-optimization.md",
               "type": "file"
-            },
-            {
-              "name": "09-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -533,14 +429,6 @@
             {
               "name": "05-gradient-descent-variants.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -566,14 +454,6 @@
             },
             {
               "name": "05-batch-normalization.md",
-              "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -609,14 +489,6 @@
             {
               "name": "07-resnet.md",
               "type": "file"
-            },
-            {
-              "name": "08-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -639,14 +511,6 @@
             {
               "name": "04-sequence-modeling.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -668,14 +532,6 @@
             },
             {
               "name": "04-encoder-decoder.md",
-              "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -707,20 +563,8 @@
             {
               "name": "06-vanishing-exploding-gradients.md",
               "type": "file"
-            },
-            {
-              "name": "07-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -747,14 +591,6 @@
             {
               "name": "04-edge-detection.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -780,14 +616,6 @@
             },
             {
               "name": "05-template-matching.md",
-              "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -831,14 +659,6 @@
             {
               "name": "09-panoptic-segmentation.md",
               "type": "file"
-            },
-            {
-              "name": "10-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -861,20 +681,8 @@
             {
               "name": "04-video-understanding.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -900,14 +708,6 @@
             },
             {
               "name": "04-stopwords.md",
-              "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -935,14 +735,6 @@
             {
               "name": "05-fasttext.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -969,14 +761,6 @@
             {
               "name": "05-parsing.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -994,14 +778,6 @@
             },
             {
               "name": "03-attention-for-nlp.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1025,20 +801,8 @@
             {
               "name": "04-encoder-decoder-architectures.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -1061,14 +825,6 @@
             {
               "name": "03-early-late-fusion.md",
               "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1086,14 +842,6 @@
             },
             {
               "name": "03-clip.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1113,14 +861,6 @@
             {
               "name": "03-audio-embeddings.md",
               "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1139,20 +879,8 @@
             {
               "name": "03-cross-modal-attention.md",
               "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -1179,14 +907,6 @@
             {
               "name": "04-positional-encoding.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1204,14 +924,6 @@
             },
             {
               "name": "03-dataset-construction.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1235,14 +947,6 @@
             {
               "name": "04-adapters.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1260,14 +964,6 @@
             },
             {
               "name": "03-safety-alignment.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1295,14 +991,6 @@
             {
               "name": "05-scaling-laws.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1325,20 +1013,8 @@
             {
               "name": "04-memory-planning.md",
               "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
     },
@@ -1364,14 +1040,6 @@
             },
             {
               "name": "04-social-impact.md",
-              "type": "file"
-            },
-            {
-              "name": "05-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1399,14 +1067,6 @@
             {
               "name": "05-saliency-maps.md",
               "type": "file"
-            },
-            {
-              "name": "06-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1424,14 +1084,6 @@
             },
             {
               "name": "03-out-of-distribution-detection.md",
-              "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
               "type": "file"
             }
           ]
@@ -1451,14 +1103,6 @@
             {
               "name": "03-federated-learning.md",
               "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
         },
@@ -1477,26 +1121,10 @@
             {
               "name": "03-ai-regulations.md",
               "type": "file"
-            },
-            {
-              "name": "04-summary.md",
-              "type": "file"
-            },
-            {
-              "name": "README.md",
-              "type": "file"
             }
           ]
-        },
-        {
-          "name": "README.md",
-          "type": "file"
         }
       ]
-    },
-    {
-      "name": "README.md",
-      "type": "file"
     }
   ]
 }
