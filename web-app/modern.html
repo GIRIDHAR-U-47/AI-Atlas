@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Atlas | Knowledge Hub</title>
+    <link rel="stylesheet" href="modern.css">
+</head>
+
+<body>
+    <div class="app-shell">
+        <!-- Floating Sidebar -->
+        <aside class="sidebar-panel">
+            <div class="sidebar-header">
+                <div class="logo-circle"></div>
+                <span class="logo-text">AI ATLAS</span>
+            </div>
+
+            <div class="tree-container" id="treeRoot">
+                <!-- Dynamic Tree injected here -->
+            </div>
+        </aside>
+
+        <!-- Main Content Viewport -->
+        <main class="main-viewport">
+            <nav class="navbar">
+                <input type="text" class="search-field" placeholder="Search research paper or topic (Cmd+K)...">
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <div class="breadcrumbs" style="font-size: 0.85rem; color: var(--text-muted);">
+                        Foundations / Search
+                    </div>
+                    <button id="themeMode" class="theme-btn">Dark Mode</button>
+                </div>
+            </nav>
+
+            <section class="article-card">
+                <div class="article-header" id="articleHeader">
+                    <span class="tag">AI Research Topic</span>
+                    <h1>Welcome to the Atlas</h1>
+                </div>
+
+                <div class="content-body" id="articleBody">
+                    <p>Select a topic from the knowledge tree on the left to begin your structured exploration of
+                        Artificial Intelligence.</p>
+                    <p>Our atlas is structured as a hierarchical research tree, designed for deep learning and quick
+                        reference.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const treeRoot = document.getElementById('treeRoot');
+        const themeBtn = document.getElementById('themeMode');
+        const root = document.documentElement;
+
+        // Theme Toggle
+        themeBtn.addEventListener('click', () => {
+            const isDark = root.getAttribute('data-theme') === 'dark';
+            root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeBtn.innerText = isDark ? 'Dark Mode' : 'Light Mode';
+        });
+
+        // Dynamic Tree Rendering
+        function renderTree(node, depth = 0) {
+            if (!node) return null;
+
+            const container = document.createElement('div');
+
+            const item = document.createElement('div');
+            item.className = 'tree-node-item';
+            item.style.paddingLeft = `${depth * 16 + 12}px`;
+
+            const icon = node.type === 'directory' ? '󱡴' : '󰈙'; // Using generic symbols
+            const iconText = node.type === 'directory' ? '📁' : '📄';
+
+            item.innerHTML = `<span>${iconText}</span> <span style="flex-grow: 1">${node.name}</span>`;
+            container.appendChild(item);
+
+            if (node.type === 'directory' && node.children) {
+                const subRef = document.createElement('div');
+                subRef.style.display = 'none';
+
+                node.children.forEach(child => {
+                    const childEl = renderTree(child, depth + 1);
+                    if (childEl) subRef.appendChild(childEl);
+                });
+
+                container.appendChild(subRef);
+
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isHidden = subRef.style.display === 'none';
+                    subRef.style.display = isHidden ? 'block' : 'none';
+                    item.querySelector('span').innerText = isHidden ? '📂' : '📁';
+                });
+            } else {
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    document.querySelectorAll('.tree-node-item').forEach(el => el.classList.remove('active'));
+                    item.classList.add('active');
+                    loadTopic(node.name);
+                });
+            }
+
+            return container;
+        }
+
+        function loadTopic(name) {
+            document.querySelector('#articleHeader h1').innerText = name.replace('.md', '').replaceAll('-', ' ');
+            document.querySelector('#articleBody').innerHTML = `
+                <p>You are currently viewing the research section for <strong>${name}</strong>.</p>
+                <div style="padding: 24px; background: var(--border); border-radius: 12px; margin-top: 24px;">
+                    <p style="margin:0; opacity: 0.7;">[Markdown content streaming integration pending...]</p>
+                </div>
+            `;
+        }
+
+        // Init
+        fetch('structure.json')
+            .then(res => res.json())
+            .then(data => {
+                if (data.children) {
+                    data.children.forEach(child => {
+                        treeRoot.appendChild(renderTree(child));
+                    });
+                }
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1502 @@
+{
+  "name": "Docs",
+  "type": "directory",
+  "children": [
+    {
+      "name": "01-Foundations-of-AI",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-What-is-Intelligence",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-definition-of-intelligence.md",
+              "type": "file"
+            },
+            {
+              "name": "02-rationality.md",
+              "type": "file"
+            },
+            {
+              "name": "03-intelligence-vs-automation.md",
+              "type": "file"
+            },
+            {
+              "name": "04-human-vs-artificial-intelligence.md",
+              "type": "file"
+            },
+            {
+              "name": "05-strong-ai-vs-weak-ai.md",
+              "type": "file"
+            },
+            {
+              "name": "06-key-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            },
+            {
+              "name": "zz-test-topic.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Intelligent-Agents",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-agents-and-environments.md",
+              "type": "file"
+            },
+            {
+              "name": "02-peas-framework.md",
+              "type": "file"
+            },
+            {
+              "name": "03-types-of-agents.md",
+              "type": "file"
+            },
+            {
+              "name": "04-simple-reflex-agent.md",
+              "type": "file"
+            },
+            {
+              "name": "05-model-based-agent.md",
+              "type": "file"
+            },
+            {
+              "name": "06-goal-based-agent.md",
+              "type": "file"
+            },
+            {
+              "name": "07-utility-based-agent.md",
+              "type": "file"
+            },
+            {
+              "name": "08-learning-agent.md",
+              "type": "file"
+            },
+            {
+              "name": "09-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Problem-Solving-and-Search",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-state-space-representation.md",
+              "type": "file"
+            },
+            {
+              "name": "02-uninformed-search.md",
+              "type": "file"
+            },
+            {
+              "name": "03-bfs-dfs-ucs.md",
+              "type": "file"
+            },
+            {
+              "name": "04-informed-search.md",
+              "type": "file"
+            },
+            {
+              "name": "05-greedy-and-a-star.md",
+              "type": "file"
+            },
+            {
+              "name": "06-adversarial-search.md",
+              "type": "file"
+            },
+            {
+              "name": "07-minimax-alpha-beta.md",
+              "type": "file"
+            },
+            {
+              "name": "08-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Knowledge-Representation-and-Reasoning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-propositional-logic.md",
+              "type": "file"
+            },
+            {
+              "name": "02-first-order-logic.md",
+              "type": "file"
+            },
+            {
+              "name": "03-knowledge-bases.md",
+              "type": "file"
+            },
+            {
+              "name": "04-inference-methods.md",
+              "type": "file"
+            },
+            {
+              "name": "05-forward-backward-chaining.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Planning-and-Decision-Making",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-classical-planning.md",
+              "type": "file"
+            },
+            {
+              "name": "02-markov-decision-processes.md",
+              "type": "file"
+            },
+            {
+              "name": "03-utility-theory-decision-trees.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "06-Uncertainty-and-Probability",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-probability-basics.md",
+              "type": "file"
+            },
+            {
+              "name": "02-bayes-rule.md",
+              "type": "file"
+            },
+            {
+              "name": "03-bayesian-networks.md",
+              "type": "file"
+            },
+            {
+              "name": "04-hidden-markov-models.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "02-Machine-Learning",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-ML-Fundamentals",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-what-is-learning.md",
+              "type": "file"
+            },
+            {
+              "name": "02-training-vs-testing.md",
+              "type": "file"
+            },
+            {
+              "name": "03-bias-variance-tradeoff.md",
+              "type": "file"
+            },
+            {
+              "name": "04-overfitting-underfitting.md",
+              "type": "file"
+            },
+            {
+              "name": "05-loss-functions.md",
+              "type": "file"
+            },
+            {
+              "name": "06-optimization-basics.md",
+              "type": "file"
+            },
+            {
+              "name": "07-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Supervised-Learning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-linear-regression.md",
+              "type": "file"
+            },
+            {
+              "name": "02-polynomial-regression.md",
+              "type": "file"
+            },
+            {
+              "name": "03-ridge-regression.md",
+              "type": "file"
+            },
+            {
+              "name": "04-lasso-regression.md",
+              "type": "file"
+            },
+            {
+              "name": "05-elastic-net.md",
+              "type": "file"
+            },
+            {
+              "name": "06-logistic-regression.md",
+              "type": "file"
+            },
+            {
+              "name": "07-knn.md",
+              "type": "file"
+            },
+            {
+              "name": "08-naive-bayes.md",
+              "type": "file"
+            },
+            {
+              "name": "09-decision-trees.md",
+              "type": "file"
+            },
+            {
+              "name": "10-random-forests.md",
+              "type": "file"
+            },
+            {
+              "name": "11-support-vector-machines.md",
+              "type": "file"
+            },
+            {
+              "name": "12-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Unsupervised-Learning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-k-means.md",
+              "type": "file"
+            },
+            {
+              "name": "02-hierarchical-clustering.md",
+              "type": "file"
+            },
+            {
+              "name": "03-dbscan.md",
+              "type": "file"
+            },
+            {
+              "name": "04-pca.md",
+              "type": "file"
+            },
+            {
+              "name": "05-lda.md",
+              "type": "file"
+            },
+            {
+              "name": "06-t-sne.md",
+              "type": "file"
+            },
+            {
+              "name": "07-umap.md",
+              "type": "file"
+            },
+            {
+              "name": "08-apriori.md",
+              "type": "file"
+            },
+            {
+              "name": "09-fp-growth.md",
+              "type": "file"
+            },
+            {
+              "name": "10-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Semi-Supervised-Learning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-self-training.md",
+              "type": "file"
+            },
+            {
+              "name": "02-label-propagation.md",
+              "type": "file"
+            },
+            {
+              "name": "03-co-training.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Reinforcement-Learning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-rl-fundamentals.md",
+              "type": "file"
+            },
+            {
+              "name": "02-agent-environment-reward.md",
+              "type": "file"
+            },
+            {
+              "name": "03-policy.md",
+              "type": "file"
+            },
+            {
+              "name": "04-multi-armed-bandits.md",
+              "type": "file"
+            },
+            {
+              "name": "05-markov-decision-processes.md",
+              "type": "file"
+            },
+            {
+              "name": "06-q-learning.md",
+              "type": "file"
+            },
+            {
+              "name": "07-sarsa.md",
+              "type": "file"
+            },
+            {
+              "name": "08-policy-gradients.md",
+              "type": "file"
+            },
+            {
+              "name": "09-model-based-rl.md",
+              "type": "file"
+            },
+            {
+              "name": "10-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "06-Model-Evaluation-and-Selection",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-cross-validation.md",
+              "type": "file"
+            },
+            {
+              "name": "02-accuracy.md",
+              "type": "file"
+            },
+            {
+              "name": "03-precision-recall.md",
+              "type": "file"
+            },
+            {
+              "name": "04-f1-score.md",
+              "type": "file"
+            },
+            {
+              "name": "05-roc-auc.md",
+              "type": "file"
+            },
+            {
+              "name": "06-grid-search.md",
+              "type": "file"
+            },
+            {
+              "name": "07-random-search.md",
+              "type": "file"
+            },
+            {
+              "name": "08-bayesian-optimization.md",
+              "type": "file"
+            },
+            {
+              "name": "09-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "03-Deep-Learning",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-Neural-Network-Basics",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-perceptron.md",
+              "type": "file"
+            },
+            {
+              "name": "02-activation-functions.md",
+              "type": "file"
+            },
+            {
+              "name": "03-loss-functions.md",
+              "type": "file"
+            },
+            {
+              "name": "04-backpropagation.md",
+              "type": "file"
+            },
+            {
+              "name": "05-gradient-descent-variants.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Feedforward-Networks",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-multilayer-perceptrons.md",
+              "type": "file"
+            },
+            {
+              "name": "02-initialization-techniques.md",
+              "type": "file"
+            },
+            {
+              "name": "03-regularization.md",
+              "type": "file"
+            },
+            {
+              "name": "04-dropout.md",
+              "type": "file"
+            },
+            {
+              "name": "05-batch-normalization.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Convolutional-Neural-Networks",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-convolution-operation.md",
+              "type": "file"
+            },
+            {
+              "name": "02-filters-feature-maps.md",
+              "type": "file"
+            },
+            {
+              "name": "03-pooling.md",
+              "type": "file"
+            },
+            {
+              "name": "04-lenet.md",
+              "type": "file"
+            },
+            {
+              "name": "05-alexnet.md",
+              "type": "file"
+            },
+            {
+              "name": "06-vgg.md",
+              "type": "file"
+            },
+            {
+              "name": "07-resnet.md",
+              "type": "file"
+            },
+            {
+              "name": "08-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Recurrent-Neural-Networks",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-vanilla-rnn.md",
+              "type": "file"
+            },
+            {
+              "name": "02-lstm.md",
+              "type": "file"
+            },
+            {
+              "name": "03-gru.md",
+              "type": "file"
+            },
+            {
+              "name": "04-sequence-modeling.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Attention-and-Transformers",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-attention-mechanism.md",
+              "type": "file"
+            },
+            {
+              "name": "02-self-attention.md",
+              "type": "file"
+            },
+            {
+              "name": "03-transformer-architecture.md",
+              "type": "file"
+            },
+            {
+              "name": "04-encoder-decoder.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "06-Training-Deep-Models",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-sgd.md",
+              "type": "file"
+            },
+            {
+              "name": "02-adam.md",
+              "type": "file"
+            },
+            {
+              "name": "03-rmsprop.md",
+              "type": "file"
+            },
+            {
+              "name": "04-learning-rate-scheduling.md",
+              "type": "file"
+            },
+            {
+              "name": "05-weight-initialization.md",
+              "type": "file"
+            },
+            {
+              "name": "06-vanishing-exploding-gradients.md",
+              "type": "file"
+            },
+            {
+              "name": "07-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "04-Computer-Vision",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-Image-Basics",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-pixels-and-channels.md",
+              "type": "file"
+            },
+            {
+              "name": "02-color-spaces.md",
+              "type": "file"
+            },
+            {
+              "name": "03-image-filtering.md",
+              "type": "file"
+            },
+            {
+              "name": "04-edge-detection.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Classical-Computer-Vision",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-sift.md",
+              "type": "file"
+            },
+            {
+              "name": "02-surf.md",
+              "type": "file"
+            },
+            {
+              "name": "03-orb.md",
+              "type": "file"
+            },
+            {
+              "name": "04-image-transformations.md",
+              "type": "file"
+            },
+            {
+              "name": "05-template-matching.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Deep-Learning-for-Vision",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-cnns-for-vision.md",
+              "type": "file"
+            },
+            {
+              "name": "02-image-classification.md",
+              "type": "file"
+            },
+            {
+              "name": "03-rcnn.md",
+              "type": "file"
+            },
+            {
+              "name": "04-fast-faster-rcnn.md",
+              "type": "file"
+            },
+            {
+              "name": "05-yolo.md",
+              "type": "file"
+            },
+            {
+              "name": "06-ssd.md",
+              "type": "file"
+            },
+            {
+              "name": "07-semantic-segmentation.md",
+              "type": "file"
+            },
+            {
+              "name": "08-instance-segmentation.md",
+              "type": "file"
+            },
+            {
+              "name": "09-panoptic-segmentation.md",
+              "type": "file"
+            },
+            {
+              "name": "10-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Advanced-Vision",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-face-recognition.md",
+              "type": "file"
+            },
+            {
+              "name": "02-pose-estimation.md",
+              "type": "file"
+            },
+            {
+              "name": "03-optical-flow.md",
+              "type": "file"
+            },
+            {
+              "name": "04-video-understanding.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "05-Natural-Language-Processing",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-Text-Fundamentals",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-text-cleaning.md",
+              "type": "file"
+            },
+            {
+              "name": "02-tokenization.md",
+              "type": "file"
+            },
+            {
+              "name": "03-stemming-lemmatization.md",
+              "type": "file"
+            },
+            {
+              "name": "04-stopwords.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Text-Representation",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-bag-of-words.md",
+              "type": "file"
+            },
+            {
+              "name": "02-tf-idf.md",
+              "type": "file"
+            },
+            {
+              "name": "03-word2vec.md",
+              "type": "file"
+            },
+            {
+              "name": "04-glove.md",
+              "type": "file"
+            },
+            {
+              "name": "05-fasttext.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Classical-NLP-Tasks",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-text-classification.md",
+              "type": "file"
+            },
+            {
+              "name": "02-sentiment-analysis.md",
+              "type": "file"
+            },
+            {
+              "name": "03-named-entity-recognition.md",
+              "type": "file"
+            },
+            {
+              "name": "04-pos-tagging.md",
+              "type": "file"
+            },
+            {
+              "name": "05-parsing.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Neural-NLP",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-rnns-for-text.md",
+              "type": "file"
+            },
+            {
+              "name": "02-seq2seq-models.md",
+              "type": "file"
+            },
+            {
+              "name": "03-attention-for-nlp.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Transformer-based-NLP",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-bert.md",
+              "type": "file"
+            },
+            {
+              "name": "02-gpt.md",
+              "type": "file"
+            },
+            {
+              "name": "03-t5.md",
+              "type": "file"
+            },
+            {
+              "name": "04-encoder-decoder-architectures.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "06-Multimodal-AI",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-Multimodal-Fundamentals",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-what-is-multimodality.md",
+              "type": "file"
+            },
+            {
+              "name": "02-modalities.md",
+              "type": "file"
+            },
+            {
+              "name": "03-early-late-fusion.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Vision-Language-Models",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-image-captioning.md",
+              "type": "file"
+            },
+            {
+              "name": "02-visual-question-answering.md",
+              "type": "file"
+            },
+            {
+              "name": "03-clip.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Audio-Language-Models",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-speech-to-text.md",
+              "type": "file"
+            },
+            {
+              "name": "02-text-to-speech.md",
+              "type": "file"
+            },
+            {
+              "name": "03-audio-embeddings.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Large-Multimodal-Models",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-image-text-models.md",
+              "type": "file"
+            },
+            {
+              "name": "02-video-text-models.md",
+              "type": "file"
+            },
+            {
+              "name": "03-cross-modal-attention.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "07-Large-Language-Models",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-LLM-Foundations",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-transformers-recap.md",
+              "type": "file"
+            },
+            {
+              "name": "02-tokenization.md",
+              "type": "file"
+            },
+            {
+              "name": "03-embeddings.md",
+              "type": "file"
+            },
+            {
+              "name": "04-positional-encoding.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Pretraining",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-language-modeling-objective.md",
+              "type": "file"
+            },
+            {
+              "name": "02-masked-vs-causal-lm.md",
+              "type": "file"
+            },
+            {
+              "name": "03-dataset-construction.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Fine-tuning",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-supervised-fine-tuning.md",
+              "type": "file"
+            },
+            {
+              "name": "02-instruction-tuning.md",
+              "type": "file"
+            },
+            {
+              "name": "03-lora.md",
+              "type": "file"
+            },
+            {
+              "name": "04-adapters.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Alignment",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-rlhf.md",
+              "type": "file"
+            },
+            {
+              "name": "02-preference-models.md",
+              "type": "file"
+            },
+            {
+              "name": "03-safety-alignment.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Inference-and-Scaling",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-greedy-decoding.md",
+              "type": "file"
+            },
+            {
+              "name": "02-beam-search.md",
+              "type": "file"
+            },
+            {
+              "name": "03-sampling.md",
+              "type": "file"
+            },
+            {
+              "name": "04-context-length.md",
+              "type": "file"
+            },
+            {
+              "name": "05-scaling-laws.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "06-LLM-Systems",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-prompt-engineering.md",
+              "type": "file"
+            },
+            {
+              "name": "02-retrieval-augmented-generation.md",
+              "type": "file"
+            },
+            {
+              "name": "03-tool-use-agents.md",
+              "type": "file"
+            },
+            {
+              "name": "04-memory-planning.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "08-Responsible-Explainable-AI",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-Ethics-and-Fairness",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-bias-in-data.md",
+              "type": "file"
+            },
+            {
+              "name": "02-algorithmic-fairness.md",
+              "type": "file"
+            },
+            {
+              "name": "03-discrimination.md",
+              "type": "file"
+            },
+            {
+              "name": "04-social-impact.md",
+              "type": "file"
+            },
+            {
+              "name": "05-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-Interpretability-and-Explainability",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-model-transparency.md",
+              "type": "file"
+            },
+            {
+              "name": "02-feature-importance.md",
+              "type": "file"
+            },
+            {
+              "name": "03-shap.md",
+              "type": "file"
+            },
+            {
+              "name": "04-lime.md",
+              "type": "file"
+            },
+            {
+              "name": "05-saliency-maps.md",
+              "type": "file"
+            },
+            {
+              "name": "06-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-Robustness-and-Safety",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-adversarial-attacks.md",
+              "type": "file"
+            },
+            {
+              "name": "02-model-robustness.md",
+              "type": "file"
+            },
+            {
+              "name": "03-out-of-distribution-detection.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "04-Privacy",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-data-privacy.md",
+              "type": "file"
+            },
+            {
+              "name": "02-differential-privacy.md",
+              "type": "file"
+            },
+            {
+              "name": "03-federated-learning.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "05-Governance-and-Regulation",
+          "type": "directory",
+          "children": [
+            {
+              "name": "01-ai-risk-management.md",
+              "type": "file"
+            },
+            {
+              "name": "02-model-accountability.md",
+              "type": "file"
+            },
+            {
+              "name": "03-ai-regulations.md",
+              "type": "file"
+            },
+            {
+              "name": "04-summary.md",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    }
+  ]
+}

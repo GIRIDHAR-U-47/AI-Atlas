@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Atlas | Research Knowledge System</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar: Knowledge Tree -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;">AI <span
+                        style="color: var(--text-accent);">Atlas</span></h2>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Search Filter -->
+                <div style="margin-bottom: 1.5rem; padding: 0 0.25rem;">
+                    <input type="text" placeholder="Filter research tree..."
+                        style="width: 100%; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid var(--border-main); background: var(--bg-app); font-size: 0.9rem; outline: none;">
+                </div>
+
+                <!-- Tree Placeholder (Will be dynamic) -->
+                <nav class="knowledge-tree">
+                    <div class="tree-node">
+                        <div class="tree-node-content">
+                            <span style="margin-right: 0.5rem;">📁</span> Foundations
+                        </div>
+                    </div>
+                    <div class="tree-node active">
+                        <div class="tree-node-content" style="padding-left: 1.5rem;">
+                            <span style="margin-right: 0.5rem;">📄</span> Adversarial Search
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content: Reader -->
+        <main class="main-content">
+            <div class="reading-progress" id="progressBar"></div>
+
+            <header class="top-nav">
+                <div class="breadcrumbs">
+                    <span style="color: var(--text-muted);">Foundations</span>
+                    <span style="margin: 0 0.5rem; color: var(--text-muted);">/</span>
+                    <span style="font-weight: 500;">Adversarial Search</span>
+                </div>
+
+                <div class="actions">
+                    <button id="themeToggle"
+                        style="background: none; border: 1px solid var(--border-main); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500;">
+                        Dark Mode
+                    </button>
+                </div>
+            </header>
+
+            <section class="article-wrapper">
+                <article class="article-body">
+                    <h1>Adversarial Search</h1>
+
+                    <p>In complex environments, an agent often faces an <strong>opponent</strong> whose goals are in
+                        direct conflict with its own. This is the domain of adversarial search.</p>
+
+                    <div class="callout">
+                        <div class="callout-title">Definition</div>
+                        <p>A zero-sum game is a mathematical representation of a situation in which each participant's
+                            gain or loss is exactly balanced by those of the other participants.</p>
+                    </div>
+
+                    <h2>Minimax Strategy</h2>
+                    <p>The minimax algorithm is a decision-making tool used for finding the optimal move in a zero-sum,
+                        symmetric game. It works by minimizing the possible loss for a worst-case scenario.</p>
+
+                    <p>Consider the logic of <code>alpha-beta pruning</code>. By avoiding the exploration of branches
+                        that cannot influence the final decision, we significantly increase search efficiency.</p>
+
+                    <h2>The Calculus of Conflict</h2>
+                    <p>Modern AI research extends these classical search patterns into high-dimensional latent spaces,
+                        where "opponents" may be simulated environments or generative adversaries.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const treeContainer = document.querySelector('.knowledge-tree');
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+
+        // Theme Toggle Logic
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            themeToggle.innerText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        });
+
+        // Reading Progress Bar
+        const mainContent = document.querySelector('.main-content');
+        const progressBar = document.getElementById('progressBar');
+        mainContent.addEventListener('scroll', () => {
+            const winScroll = mainContent.scrollTop;
+            const height = mainContent.scrollHeight - mainContent.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+        });
+
+        // Recursive Tree Generation
+        function createTree(node, depth = 0) {
+            if (!node) return null;
+
+            const nodeEl = document.createElement('div');
+            nodeEl.className = 'tree-node';
+
+            const contentEl = document.createElement('div');
+            contentEl.className = 'tree-node-content';
+            contentEl.style.paddingLeft = `${depth * 1.25 + 0.75}rem`;
+
+            const icon = node.type === 'directory' ? '📁' : '📄';
+            contentEl.innerHTML = `<span style="margin-right: 0.5rem; opacity: 0.7;">${icon}</span> ${node.name}`;
+
+            nodeEl.appendChild(contentEl);
+
+            if (node.type === 'directory' && node.children) {
+                const childrenContainer = document.createElement('div');
+                childrenContainer.className = 'node-children';
+                childrenContainer.style.display = 'none'; // Collapsed by default
+
+                node.children.forEach(child => {
+                    const childTree = createTree(child, depth + 1);
+                    if (childTree) childrenContainer.appendChild(childTree);
+                });
+
+                nodeEl.appendChild(childrenContainer);
+
+                // Expand/Collapse Interaction
+                contentEl.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isCollapsed = childrenContainer.style.display === 'none';
+                    childrenContainer.style.display = isCollapsed ? 'block' : 'none';
+                    contentEl.querySelector('span').innerText = isCollapsed ? '📂' : '📁';
+                });
+            } else {
+                // File link interaction
+                contentEl.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    document.querySelectorAll('.tree-node').forEach(n => n.classList.remove('active'));
+                    nodeEl.classList.add('active');
+                    console.log('Loading topic:', node.name);
+                    // Future: Fetch and render markdown content
+                });
+            }
+
+            return nodeEl;
+        }
+
+        // Load the structure and initialize
+        fetch('structure.json')
+            .then(response => response.json())
+            .then(data => {
+                treeContainer.innerHTML = '';
+                // The root is the "Docs" folder, we render its children
+                if (data.children) {
+                    data.children.forEach(child => {
+                        treeContainer.appendChild(createTree(child));
+                    });
+                }
+            })
+            .catch(err => {
+                console.error('Error loading structure:', err);
+                treeContainer.innerHTML = '<p style="padding: 1rem; font-size: 0.8rem; color: var(--text-muted);">Error loading research tree.</p>';
+            });
+    </script>
+</body>
+
+</html>

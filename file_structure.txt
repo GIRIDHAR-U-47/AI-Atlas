@@ -1,0 +1,355 @@
+﻿AI-Atlas/
+├── Docs/
+│   ├── 01-Foundations-of-AI/
+│   │   ├── 01-What-is-Intelligence/
+│   │   │   ├── 01-definition-of-intelligence.md
+│   │   │   ├── 02-rationality.md
+│   │   │   ├── 03-intelligence-vs-automation.md
+│   │   │   ├── 04-human-vs-artificial-intelligence.md
+│   │   │   ├── 05-strong-ai-vs-weak-ai.md
+│   │   │   ├── 06-key-summary.md
+│   │   │   ├── README.md
+│   │   │   └── zz-test-topic.md
+│   │   ├── 02-Intelligent-Agents/
+│   │   │   ├── 01-agents-and-environments.md
+│   │   │   ├── 02-peas-framework.md
+│   │   │   ├── 03-types-of-agents.md
+│   │   │   ├── 04-simple-reflex-agent.md
+│   │   │   ├── 05-model-based-agent.md
+│   │   │   ├── 06-goal-based-agent.md
+│   │   │   ├── 07-utility-based-agent.md
+│   │   │   ├── 08-learning-agent.md
+│   │   │   ├── 09-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Problem-Solving-and-Search/
+│   │   │   ├── 01-state-space-representation.md
+│   │   │   ├── 02-uninformed-search.md
+│   │   │   ├── 03-bfs-dfs-ucs.md
+│   │   │   ├── 04-informed-search.md
+│   │   │   ├── 05-greedy-and-a-star.md
+│   │   │   ├── 06-adversarial-search.md
+│   │   │   ├── 07-minimax-alpha-beta.md
+│   │   │   ├── 08-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Knowledge-Representation-and-Reasoning/
+│   │   │   ├── 01-propositional-logic.md
+│   │   │   ├── 02-first-order-logic.md
+│   │   │   ├── 03-knowledge-bases.md
+│   │   │   ├── 04-inference-methods.md
+│   │   │   ├── 05-forward-backward-chaining.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Planning-and-Decision-Making/
+│   │   │   ├── 01-classical-planning.md
+│   │   │   ├── 02-markov-decision-processes.md
+│   │   │   ├── 03-utility-theory-decision-trees.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 06-Uncertainty-and-Probability/
+│   │   │   ├── 01-probability-basics.md
+│   │   │   ├── 02-bayes-rule.md
+│   │   │   ├── 03-bayesian-networks.md
+│   │   │   ├── 04-hidden-markov-models.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 02-Machine-Learning/
+│   │   ├── 01-ML-Fundamentals/
+│   │   │   ├── 01-what-is-learning.md
+│   │   │   ├── 02-training-vs-testing.md
+│   │   │   ├── 03-bias-variance-tradeoff.md
+│   │   │   ├── 04-overfitting-underfitting.md
+│   │   │   ├── 05-loss-functions.md
+│   │   │   ├── 06-optimization-basics.md
+│   │   │   ├── 07-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Supervised-Learning/
+│   │   │   ├── 01-linear-regression.md
+│   │   │   ├── 02-polynomial-regression.md
+│   │   │   ├── 03-ridge-regression.md
+│   │   │   ├── 04-lasso-regression.md
+│   │   │   ├── 05-elastic-net.md
+│   │   │   ├── 06-logistic-regression.md
+│   │   │   ├── 07-knn.md
+│   │   │   ├── 08-naive-bayes.md
+│   │   │   ├── 09-decision-trees.md
+│   │   │   ├── 10-random-forests.md
+│   │   │   ├── 11-support-vector-machines.md
+│   │   │   ├── 12-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Unsupervised-Learning/
+│   │   │   ├── 01-k-means.md
+│   │   │   ├── 02-hierarchical-clustering.md
+│   │   │   ├── 03-dbscan.md
+│   │   │   ├── 04-pca.md
+│   │   │   ├── 05-lda.md
+│   │   │   ├── 06-t-sne.md
+│   │   │   ├── 07-umap.md
+│   │   │   ├── 08-apriori.md
+│   │   │   ├── 09-fp-growth.md
+│   │   │   ├── 10-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Semi-Supervised-Learning/
+│   │   │   ├── 01-self-training.md
+│   │   │   ├── 02-label-propagation.md
+│   │   │   ├── 03-co-training.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Reinforcement-Learning/
+│   │   │   ├── 01-rl-fundamentals.md
+│   │   │   ├── 02-agent-environment-reward.md
+│   │   │   ├── 03-policy.md
+│   │   │   ├── 04-multi-armed-bandits.md
+│   │   │   ├── 05-markov-decision-processes.md
+│   │   │   ├── 06-q-learning.md
+│   │   │   ├── 07-sarsa.md
+│   │   │   ├── 08-policy-gradients.md
+│   │   │   ├── 09-model-based-rl.md
+│   │   │   ├── 10-summary.md
+│   │   │   └── README.md
+│   │   ├── 06-Model-Evaluation-and-Selection/
+│   │   │   ├── 01-cross-validation.md
+│   │   │   ├── 02-accuracy.md
+│   │   │   ├── 03-precision-recall.md
+│   │   │   ├── 04-f1-score.md
+│   │   │   ├── 05-roc-auc.md
+│   │   │   ├── 06-grid-search.md
+│   │   │   ├── 07-random-search.md
+│   │   │   ├── 08-bayesian-optimization.md
+│   │   │   ├── 09-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 03-Deep-Learning/
+│   │   ├── 01-Neural-Network-Basics/
+│   │   │   ├── 01-perceptron.md
+│   │   │   ├── 02-activation-functions.md
+│   │   │   ├── 03-loss-functions.md
+│   │   │   ├── 04-backpropagation.md
+│   │   │   ├── 05-gradient-descent-variants.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Feedforward-Networks/
+│   │   │   ├── 01-multilayer-perceptrons.md
+│   │   │   ├── 02-initialization-techniques.md
+│   │   │   ├── 03-regularization.md
+│   │   │   ├── 04-dropout.md
+│   │   │   ├── 05-batch-normalization.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Convolutional-Neural-Networks/
+│   │   │   ├── 01-convolution-operation.md
+│   │   │   ├── 02-filters-feature-maps.md
+│   │   │   ├── 03-pooling.md
+│   │   │   ├── 04-lenet.md
+│   │   │   ├── 05-alexnet.md
+│   │   │   ├── 06-vgg.md
+│   │   │   ├── 07-resnet.md
+│   │   │   ├── 08-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Recurrent-Neural-Networks/
+│   │   │   ├── 01-vanilla-rnn.md
+│   │   │   ├── 02-lstm.md
+│   │   │   ├── 03-gru.md
+│   │   │   ├── 04-sequence-modeling.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Attention-and-Transformers/
+│   │   │   ├── 01-attention-mechanism.md
+│   │   │   ├── 02-self-attention.md
+│   │   │   ├── 03-transformer-architecture.md
+│   │   │   ├── 04-encoder-decoder.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 06-Training-Deep-Models/
+│   │   │   ├── 01-sgd.md
+│   │   │   ├── 02-adam.md
+│   │   │   ├── 03-rmsprop.md
+│   │   │   ├── 04-learning-rate-scheduling.md
+│   │   │   ├── 05-weight-initialization.md
+│   │   │   ├── 06-vanishing-exploding-gradients.md
+│   │   │   ├── 07-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 04-Computer-Vision/
+│   │   ├── 01-Image-Basics/
+│   │   │   ├── 01-pixels-and-channels.md
+│   │   │   ├── 02-color-spaces.md
+│   │   │   ├── 03-image-filtering.md
+│   │   │   ├── 04-edge-detection.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Classical-Computer-Vision/
+│   │   │   ├── 01-sift.md
+│   │   │   ├── 02-surf.md
+│   │   │   ├── 03-orb.md
+│   │   │   ├── 04-image-transformations.md
+│   │   │   ├── 05-template-matching.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Deep-Learning-for-Vision/
+│   │   │   ├── 01-cnns-for-vision.md
+│   │   │   ├── 02-image-classification.md
+│   │   │   ├── 03-rcnn.md
+│   │   │   ├── 04-fast-faster-rcnn.md
+│   │   │   ├── 05-yolo.md
+│   │   │   ├── 06-ssd.md
+│   │   │   ├── 07-semantic-segmentation.md
+│   │   │   ├── 08-instance-segmentation.md
+│   │   │   ├── 09-panoptic-segmentation.md
+│   │   │   ├── 10-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Advanced-Vision/
+│   │   │   ├── 01-face-recognition.md
+│   │   │   ├── 02-pose-estimation.md
+│   │   │   ├── 03-optical-flow.md
+│   │   │   ├── 04-video-understanding.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 05-Natural-Language-Processing/
+│   │   ├── 01-Text-Fundamentals/
+│   │   │   ├── 01-text-cleaning.md
+│   │   │   ├── 02-tokenization.md
+│   │   │   ├── 03-stemming-lemmatization.md
+│   │   │   ├── 04-stopwords.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Text-Representation/
+│   │   │   ├── 01-bag-of-words.md
+│   │   │   ├── 02-tf-idf.md
+│   │   │   ├── 03-word2vec.md
+│   │   │   ├── 04-glove.md
+│   │   │   ├── 05-fasttext.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Classical-NLP-Tasks/
+│   │   │   ├── 01-text-classification.md
+│   │   │   ├── 02-sentiment-analysis.md
+│   │   │   ├── 03-named-entity-recognition.md
+│   │   │   ├── 04-pos-tagging.md
+│   │   │   ├── 05-parsing.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Neural-NLP/
+│   │   │   ├── 01-rnns-for-text.md
+│   │   │   ├── 02-seq2seq-models.md
+│   │   │   ├── 03-attention-for-nlp.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Transformer-based-NLP/
+│   │   │   ├── 01-bert.md
+│   │   │   ├── 02-gpt.md
+│   │   │   ├── 03-t5.md
+│   │   │   ├── 04-encoder-decoder-architectures.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 06-Multimodal-AI/
+│   │   ├── 01-Multimodal-Fundamentals/
+│   │   │   ├── 01-what-is-multimodality.md
+│   │   │   ├── 02-modalities.md
+│   │   │   ├── 03-early-late-fusion.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Vision-Language-Models/
+│   │   │   ├── 01-image-captioning.md
+│   │   │   ├── 02-visual-question-answering.md
+│   │   │   ├── 03-clip.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Audio-Language-Models/
+│   │   │   ├── 01-speech-to-text.md
+│   │   │   ├── 02-text-to-speech.md
+│   │   │   ├── 03-audio-embeddings.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Large-Multimodal-Models/
+│   │   │   ├── 01-image-text-models.md
+│   │   │   ├── 02-video-text-models.md
+│   │   │   ├── 03-cross-modal-attention.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 07-Large-Language-Models/
+│   │   ├── 01-LLM-Foundations/
+│   │   │   ├── 01-transformers-recap.md
+│   │   │   ├── 02-tokenization.md
+│   │   │   ├── 03-embeddings.md
+│   │   │   ├── 04-positional-encoding.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Pretraining/
+│   │   │   ├── 01-language-modeling-objective.md
+│   │   │   ├── 02-masked-vs-causal-lm.md
+│   │   │   ├── 03-dataset-construction.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Fine-tuning/
+│   │   │   ├── 01-supervised-fine-tuning.md
+│   │   │   ├── 02-instruction-tuning.md
+│   │   │   ├── 03-lora.md
+│   │   │   ├── 04-adapters.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Alignment/
+│   │   │   ├── 01-rlhf.md
+│   │   │   ├── 02-preference-models.md
+│   │   │   ├── 03-safety-alignment.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Inference-and-Scaling/
+│   │   │   ├── 01-greedy-decoding.md
+│   │   │   ├── 02-beam-search.md
+│   │   │   ├── 03-sampling.md
+│   │   │   ├── 04-context-length.md
+│   │   │   ├── 05-scaling-laws.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 06-LLM-Systems/
+│   │   │   ├── 01-prompt-engineering.md
+│   │   │   ├── 02-retrieval-augmented-generation.md
+│   │   │   ├── 03-tool-use-agents.md
+│   │   │   ├── 04-memory-planning.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   ├── 08-Responsible-Explainable-AI/
+│   │   ├── 01-Ethics-and-Fairness/
+│   │   │   ├── 01-bias-in-data.md
+│   │   │   ├── 02-algorithmic-fairness.md
+│   │   │   ├── 03-discrimination.md
+│   │   │   ├── 04-social-impact.md
+│   │   │   ├── 05-summary.md
+│   │   │   └── README.md
+│   │   ├── 02-Interpretability-and-Explainability/
+│   │   │   ├── 01-model-transparency.md
+│   │   │   ├── 02-feature-importance.md
+│   │   │   ├── 03-shap.md
+│   │   │   ├── 04-lime.md
+│   │   │   ├── 05-saliency-maps.md
+│   │   │   ├── 06-summary.md
+│   │   │   └── README.md
+│   │   ├── 03-Robustness-and-Safety/
+│   │   │   ├── 01-adversarial-attacks.md
+│   │   │   ├── 02-model-robustness.md
+│   │   │   ├── 03-out-of-distribution-detection.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 04-Privacy/
+│   │   │   ├── 01-data-privacy.md
+│   │   │   ├── 02-differential-privacy.md
+│   │   │   ├── 03-federated-learning.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   ├── 05-Governance-and-Regulation/
+│   │   │   ├── 01-ai-risk-management.md
+│   │   │   ├── 02-model-accountability.md
+│   │   │   ├── 03-ai-regulations.md
+│   │   │   ├── 04-summary.md
+│   │   │   └── README.md
+│   │   └── README.md
+│   └── README.md
+├── batch_fill.py
+├── fill_docs.py
+├── logo.png
+└── README.md

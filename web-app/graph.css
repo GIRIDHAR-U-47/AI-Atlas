@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --bg-deep: #050508;
+    --accent-cyan: #00f3ff;
+    --accent-purple: #7000ff;
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --glass: rgba(10, 10, 15, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Infinite Canvas Background */
+#atlas-canvas {
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+    overflow: hidden;
+    position: relative;
+    background: #050508;
+}
+
+#grid-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#graph-stage {
+    width: 10000px;
+    /* Massive stage */
+    height: 10000px;
+    position: absolute;
+    top: -5000px;
+    left: -5000px;
+    transform-origin: center center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+/* Node Orbs */
+.node-orb {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.orb-core {
+    width: 12px;
+    height: 12px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-cyan), 0 0 30px var(--accent-cyan);
+    transition: transform 0.3s ease;
+}
+
+.folder-core {
+    background: var(--accent-purple);
+    box-shadow: 0 0 15px var(--accent-purple), 0 0 30px var(--accent-purple);
+}
+
+.node-orb:hover .orb-core {
+    transform: scale(1.5);
+}
+
+.node-label {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-dim);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.node-orb:hover .node-label {
+    color: #fff;
+    background: rgba(0, 243, 255, 0.1);
+}
+
+/* UI Overlay */
+.interface-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.top-bar {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: auto;
+}
+
+.search-field {
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #fff;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    font-family: 'Space Grotesk';
+    outline: none;
+}
+
+/* Side Reader Panel */
+.side-reader {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    bottom: 0;
+    width: 550px;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(40px);
+    border-left: 1px solid rgba(0, 243, 255, 0.2);
+    z-index: 1000;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 60px 40px;
+    box-shadow: -40px 0 100px rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+}
+
+.side-reader.active {
+    transform: translateX(-600px);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    opacity: 0.4;
+}
+
+.close-btn:hover {
+    opacity: 1;
+    color: var(--accent-cyan);
+}
+
+.article-content h1 {
+    font-family: 'Space Grotesk';
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.article-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Markdown Content Styling */
+#articleText h1,
+#articleText h2,
+#articleText h3 {
+    font-family: 'Space Grotesk';
+    color: var(--accent-cyan);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#articleText p {
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+#articleText code {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--accent-cyan);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+#articleText pre {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+#articleText img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.strm-text {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px var(--accent-cyan);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes pulse-stroke {
+    0% {
+        stroke-opacity: 0.1;
+        stroke-width: 1.5;
+    }
+
+    50% {
+        stroke-opacity: 0.3;
+        stroke-width: 2.5;
+        filter: blur(2px);
+    }
+
+    100% {
+        stroke-opacity: 0.1;
+        stroke-width: 1.5;
+    }
+}
+
+line {
+    animation: pulse-stroke 3s infinite ease-in-out;
+}
+
+@keyframes pulse-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
