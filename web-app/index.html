@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Atlas | Research Knowledge System</title>
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 </head>
 
 <body>
@@ -52,12 +54,18 @@
                 </div>
 
                 <div class="actions">
-                    <button id="themeToggle"
-                        style="background: none; border: 1px solid var(--border-main); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500;">
+                    <button id="viewToggle" class="btn-secondary">
+                        Switch to Mind Map
+                    </button>
+                    <button id="themeToggle" class="btn-secondary">
                         Dark Mode
                     </button>
                 </div>
             </header>
+
+            <div id="mindMapContainer" class="mind-map-container" style="display: none;">
+                <svg id="mindMap"></svg>
+            </div>
 
             <section class="article-wrapper">
                 <article class="article-body">
@@ -90,7 +98,15 @@
     <script>
         const treeContainer = document.querySelector('.knowledge-tree');
         const themeToggle = document.getElementById('themeToggle');
+        const viewToggle = document.getElementById('viewToggle');
+        const articleBody = document.querySelector('.article-body');
+        const breadcrumbs = document.querySelector('.breadcrumbs');
+        const mindMapContainer = document.getElementById('mindMapContainer');
+        const articleWrapper = document.querySelector('.article-wrapper');
         const root = document.documentElement;
+
+        let globalTreeData = null;
+        let isMapView = false;
 
         // Theme Toggle Logic
         themeToggle.addEventListener('click', () => {
@@ -98,6 +114,21 @@
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             root.setAttribute('data-theme', newTheme);
             themeToggle.innerText = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        });
+
+        // View Toggle Logic
+        viewToggle.addEventListener('click', () => {
+            isMapView = !isMapView;
+            if (isMapView) {
+                articleWrapper.style.display = 'none';
+                mindMapContainer.style.display = 'flex';
+                viewToggle.innerText = 'Switch to Reader';
+                renderMindMap(globalTreeData);
+            } else {
+                articleWrapper.style.display = 'block';
+                mindMapContainer.style.display = 'none';
+                viewToggle.innerText = 'Switch to Mind Map';
+            }
         });
 
         // Reading Progress Bar
@@ -110,9 +141,80 @@
             progressBar.style.width = scrolled + "%";
         });
 
+        function updateBreadcrumbs(path) {
+            const parts = path.split('/').filter(p => p && p !== 'data');
+            breadcrumbs.innerHTML = parts.map((part, i) => {
+                const name = part.replace(/^\d+-/, '').replace(/-/g, ' ').replace('.txt', '');
+                const partialPath = 'data/' + parts.slice(0, i + 1).join('/');
+                const isLast = i === parts.length - 1;
+                return `<span class="breadcrumb-item" data-path="${partialPath}" style="${isLast ? 'font-weight: 600;' : 'color: var(--text-muted); cursor: pointer;'}">${name}</span>`;
+            }).join('<span style="margin: 0 0.5rem; color: var(--text-muted);">/</span>');
+
+            // Add event listeners for directory breadcrumbs
+            breadcrumbs.querySelectorAll('.breadcrumb-item').forEach((el, i) => {
+                if (i < parts.length - 1) { // Only directories are clickable
+                    el.addEventListener('click', () => {
+                        const path = el.getAttribute('data-path');
+                        findAndVisualizeNode(path);
+                    });
+                }
+            });
+        }
+
+        function findAndVisualizeNode(path) {
+            if (!globalTreeData) return;
+            const parts = path.split('/').filter(p => p && p !== 'data');
+            let currentNode = globalTreeData;
+
+            for (const part of parts) {
+                if (currentNode.children) {
+                    const found = currentNode.children.find(c => c.name === part);
+                    if (found) currentNode = found;
+                    else break;
+                } else {
+                    break;
+                }
+            }
+
+            if (currentNode) {
+                // Switch to Mind Map view
+                if (!isMapView) {
+                    isMapView = true;
+                    articleWrapper.style.display = 'none';
+                    mindMapContainer.style.display = 'flex';
+                    viewToggle.innerText = 'Switch to Reader';
+                }
+                renderMindMap(currentNode);
+            }
+        }
+
+        async function loadMarkdown(path) {
+            try {
+                const response = await fetch(path);
+                const text = await response.text();
+                articleBody.innerHTML = marked.parse(text);
+                updateBreadcrumbs(path);
+                mainContent.scrollTop = 0;
+
+                // Add some interactive spice: turn headers into "revealers" or adding copy buttons to code
+                articleBody.querySelectorAll('h2').forEach(h2 => {
+                    h2.style.cursor = 'pointer';
+                    h2.title = 'Click to flash-highlight section';
+                    h2.addEventListener('click', () => {
+                        h2.classList.add('flash-highlight');
+                        setTimeout(() => h2.classList.remove('flash-highlight'), 1000);
+                    });
+                });
+            } catch (err) {
+                console.error('Error loading markdown:', err);
+                articleBody.innerHTML = `<h1>Error</h1><p>Could not load the topic: ${path}</p>`;
+            }
+        }
+
         // Recursive Tree Generation
-        function createTree(node, depth = 0) {
+        function createTree(node, fullPath = 'data', depth = 0) {
             if (!node) return null;
+            const currentPath = `${fullPath}/${node.name}`;
 
             const nodeEl = document.createElement('div');
             nodeEl.className = 'tree-node';
@@ -122,53 +224,247 @@
             contentEl.style.paddingLeft = `${depth * 1.25 + 0.75}rem`;
 
             const icon = node.type === 'directory' ? '📁' : '📄';
-            contentEl.innerHTML = `<span style="margin-right: 0.5rem; opacity: 0.7;">${icon}</span> ${node.name}`;
+            const displayName = node.name.replace(/^\d+-/, '').replace(/-/g, ' ').replace('.txt', '');
+            contentEl.innerHTML = `<span class="icon">${icon}</span> <span class="label">${displayName}</span>`;
 
             nodeEl.appendChild(contentEl);
 
             if (node.type === 'directory' && node.children) {
                 const childrenContainer = document.createElement('div');
                 childrenContainer.className = 'node-children';
-                childrenContainer.style.display = 'none'; // Collapsed by default
+                childrenContainer.style.display = 'none';
 
                 node.children.forEach(child => {
-                    const childTree = createTree(child, depth + 1);
+                    const childTree = createTree(child, currentPath, depth + 1);
                     if (childTree) childrenContainer.appendChild(childTree);
                 });
 
                 nodeEl.appendChild(childrenContainer);
 
-                // Expand/Collapse Interaction
                 contentEl.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const isCollapsed = childrenContainer.style.display === 'none';
                     childrenContainer.style.display = isCollapsed ? 'block' : 'none';
-                    contentEl.querySelector('span').innerText = isCollapsed ? '📂' : '📁';
+                    contentEl.querySelector('.icon').innerText = isCollapsed ? '📂' : '📁';
+
+                    // Trigger Mind Map for this subtree
+                    if (!isMapView) {
+                        isMapView = true;
+                        articleWrapper.style.display = 'none';
+                        mindMapContainer.style.display = 'flex';
+                        viewToggle.innerText = 'Switch to Reader';
+                    }
+                    renderMindMap(node);
                 });
-            } else {
-                // File link interaction
+            } else if (node.name.endsWith('.txt')) {
                 contentEl.addEventListener('click', (e) => {
                     e.stopPropagation();
                     document.querySelectorAll('.tree-node').forEach(n => n.classList.remove('active'));
                     nodeEl.classList.add('active');
-                    console.log('Loading topic:', node.name);
-                    // Future: Fetch and render markdown content
+
+                    // If we're in map view, switch back to reader to see the text
+                    if (isMapView) {
+                        isMapView = false;
+                        articleWrapper.style.display = 'block';
+                        mindMapContainer.style.display = 'none';
+                        viewToggle.innerText = 'Switch to Mind Map';
+                    }
+
+                    loadMarkdown(currentPath);
                 });
             }
 
             return nodeEl;
         }
 
+        // D3 Mind Map Visualization (Collapsible Top-Down Tree)
+        let rootNodeForMap = null;
+        let mapSvg = null;
+        let mapG = null;
+        let treeLayout = null;
+        let mapData = null;
+        let i_node_counter = 0;
+
+        function renderMindMap(data) {
+            const width = mindMapContainer.clientWidth;
+            const height = mindMapContainer.clientHeight;
+            mapData = data;
+
+            // Clear previous SVG content if it exists, or initialize
+            if (!mapSvg) {
+                mapSvg = d3.select("#mindMap")
+                    .attr("width", "100%")
+                    .attr("height", "100%")
+                    .call(d3.zoom().on("zoom", (event) => {
+                        mapG.attr("transform", event.transform);
+                    }));
+                mapG = mapSvg.append("g");
+            } else {
+                mapG.selectAll("*").remove();
+                // Reset zoom transform for fresh data
+                mapSvg.call(d3.zoom().transform, d3.zoomIdentity);
+            }
+
+            treeLayout = d3.tree().nodeSize([200, 150]); // Adjusted spacing for labels
+
+            rootNodeForMap = d3.hierarchy(data, d => d.children);
+            rootNodeForMap.x0 = width / 2;
+            rootNodeForMap.y0 = 50;
+
+            // Collapse all children initially except for the root's first level?
+            // User requested "only top level node should be displayed", so collapse everything.
+            if (rootNodeForMap.children) {
+                rootNodeForMap.children.forEach(collapse);
+            }
+
+            updateMap(rootNodeForMap);
+
+            // Center initial view
+            const transform = d3.zoomIdentity.translate(width / 2, 50).scale(0.8);
+            mapSvg.transition().duration(750).call(d3.zoom().transform, transform);
+        }
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
+        function updateMap(source) {
+            const duration = 750;
+            const nodes = treeLayout(rootNodeForMap).descendants();
+            const links = nodes.slice(1);
+
+            // Update nodes
+            const node = mapG.selectAll("g.node")
+                .data(nodes, d => d.id || (d.id = ++i_node_counter));
+
+            const nodeEnter = node.enter().append("g")
+                .attr("class", "node")
+                .attr("transform", d => `translate(${source.x0},${source.y0})`)
+                .on("click", (e, d) => {
+                    // If it's a file, navigate
+                    if (d.data.type === 'file' && d.data.name.endsWith('.txt')) {
+                        let pathArr = [];
+                        let curr = d;
+                        while (curr) {
+                            pathArr.unshift(curr.data.name);
+                            curr = curr.parent;
+                        }
+                        const path = 'data/' + pathArr.slice(1).join('/');
+
+                        isMapView = false;
+                        articleWrapper.style.display = 'block';
+                        mindMapContainer.style.display = 'none';
+                        viewToggle.innerText = 'Switch to Mind Map';
+                        loadMarkdown(path);
+                        return;
+                    }
+
+                    // Toggle children
+                    if (d.children) {
+                        d._children = d.children;
+                        d.children = null;
+                    } else {
+                        d.children = d._children;
+                        d._children = null;
+                    }
+                    updateMap(d);
+                });
+
+            nodeEnter.append("circle")
+                .attr("r", 1e-6)
+                .style("fill", d => d._children ? "var(--text-accent)" : "var(--bg-card)");
+
+            nodeEnter.append("text")
+                .attr("dy", "1.5em")
+                .attr("x", 0)
+                .attr("text-anchor", "middle")
+                .text(d => d.data.name.replace(/^\d+-/, '').replace(/-/g, ' ').replace('.txt', ''))
+                .style("fill-opacity", 1e-6);
+
+            const nodeUpdate = nodeEnter.merge(node);
+
+            nodeUpdate.transition()
+                .duration(duration)
+                .attr("transform", d => `translate(${d.x},${d.y})`);
+
+            nodeUpdate.select("circle")
+                .attr("r", 8)
+                .style("fill", d => d._children ? "var(--text-accent)" : "var(--bg-card)")
+                .attr("cursor", "pointer");
+
+            nodeUpdate.select("text")
+                .style("fill-opacity", 1);
+
+            const nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", d => `translate(${source.x},${source.y})`)
+                .remove();
+
+            nodeExit.select("circle").attr("r", 1e-6);
+            nodeExit.select("text").style("fill-opacity", 1e-6);
+
+            // Update links
+            const link = mapG.selectAll("path.link")
+                .data(links, d => d.id);
+
+            const linkEnter = link.enter().insert("path", "g")
+                .attr("class", "link")
+                .attr("d", d => {
+                    const o = { x: source.x0, y: source.y0 };
+                    return diagonal(o, o);
+                });
+
+            const linkUpdate = linkEnter.merge(link);
+
+            linkUpdate.transition()
+                .duration(duration)
+                .attr("d", d => diagonal(d, d.parent));
+
+            const linkExit = link.exit().transition()
+                .duration(duration)
+                .attr("d", d => {
+                    const o = { x: source.x, y: source.y };
+                    return diagonal(o, o);
+                })
+                .remove();
+
+            nodes.forEach(d => {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+
+            function diagonal(s, d) {
+                return `M ${s.x} ${s.y}
+                        C ${s.x} ${(s.y + d.y) / 2},
+                          ${d.x} ${(s.y + d.y) / 2},
+                          ${d.x} ${d.y}`;
+            }
+        }
+
+
         // Load the structure and initialize
         fetch('structure.json')
             .then(response => response.json())
             .then(data => {
+                globalTreeData = data;
                 treeContainer.innerHTML = '';
-                // The root is the "Docs" folder, we render its children
                 if (data.children) {
                     data.children.forEach(child => {
                         treeContainer.appendChild(createTree(child));
                     });
+
+                    // Auto-load first file if exists
+                    const firstChapter = data.children[0];
+                    if (firstChapter && firstChapter.children && firstChapter.children[0]) {
+                        const firstFile = firstChapter.children[0];
+                        if (firstFile.type === 'file') {
+                            loadMarkdown(`data/${firstChapter.name}/${firstFile.name}`);
+                        }
+                    }
                 }
             })
             .catch(err => {

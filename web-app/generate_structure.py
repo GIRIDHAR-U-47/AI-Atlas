@@ -12,7 +12,7 @@ def get_tree(path):
         d['type'] = 'file'
     return d
 
-docs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Docs'))
+docs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data'))
 tree = get_tree(docs_path)
 
 output_path = os.path.join(os.path.dirname(__file__), 'structure.json')

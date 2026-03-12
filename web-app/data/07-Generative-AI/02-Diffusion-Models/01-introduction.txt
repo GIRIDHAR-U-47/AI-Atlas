@@ -1,0 +1,3 @@
+# 02 Diffusion Models
+
+Introductory content for 02-Diffusion-Models research.

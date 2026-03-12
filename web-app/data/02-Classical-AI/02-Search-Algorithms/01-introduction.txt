@@ -1,0 +1,3 @@
+# 02 Search Algorithms
+
+Introductory content for 02-Search-Algorithms research.
