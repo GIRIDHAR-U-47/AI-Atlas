@@ -8,6 +8,7 @@ Rationality
 
 Intelligence vs Automation
 
+
 Human vs Artificial Intelligence
 
 Strong AI vs Weak AI
