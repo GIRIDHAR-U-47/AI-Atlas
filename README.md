@@ -6,6 +6,7 @@ AI Atlas is an open-source platform for learning artificial intelligence through
 Principles (Foundations of AI)
 1.1 What is Intelligence
 
+
 Rationality
 
 Intelligence vs Automation
